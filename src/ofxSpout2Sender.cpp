@@ -53,7 +53,28 @@ void Sender::sendTexture(ofTexture& t, string name)
 
 
 	if (i >= 0 && i < senderNameList.size())
-	{		
+	{	
+		if ((width != senderWidthList[i]) || (height != senderHeightList[i])) {
+			// quick and dirty fix for spoutSender ignoring texture resolution changes
+			senderFboList[i].destroy();
+			ofFbo senderFbo;
+			ofFbo::Settings s;
+			s.width = width;
+			s.height = height;
+			s.internalformat = GL_RGBA;
+			s.textureTarget = GL_TEXTURE_2D;
+			s.useDepth = false;
+			s.useStencil = false;
+			s.minFilter = GL_LINEAR;
+			s.maxFilter = GL_LINEAR;
+			s.wrapModeHorizontal = GL_CLAMP_TO_EDGE;
+			s.wrapModeVertical = GL_CLAMP_TO_EDGE;
+			s.numSamples = 0;
+			senderFbo.allocate(s);
+			senderFboList[i] = senderFbo;
+			senderWidthList[i] = width;
+			senderHeightList[i] = height;
+		}
 		ofPushMatrix();
 		ofPushStyle();
 		senderFboList[i].begin();

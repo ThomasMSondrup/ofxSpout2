@@ -4,7 +4,7 @@
 void ofApp::setup(){
 	ofSetFrameRate(60);
 
-	spoutReceiver.setup("Camera");
+	spoutReceiver.setup();
 }
 
 //--------------------------------------------------------------

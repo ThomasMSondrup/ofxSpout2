@@ -8,14 +8,10 @@ Receiver::Receiver() {
 	;
 }
 
-void Receiver::setup(string name) {
+void Receiver::setup() {
 	mReceiver = new SpoutReceiver;
 	mbInitialized = false;
-//	SenderName[0] = name.c_str();
-
-	int length = strlen(name.c_str());
-	strncpy(SenderName, name.c_str(), length);
-
+	SenderName[0] = 0;
 }
 
 void Receiver::showSenders() {

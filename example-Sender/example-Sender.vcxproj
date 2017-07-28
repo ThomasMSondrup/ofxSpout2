@@ -173,8 +173,9 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxSpout2\src\ofxSpout2Sender.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\src\ofxSpout2Receiver.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxSpout2\src\ofxSpout2Sender.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutCopy.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutDirectX.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutGLDXinterop.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutGLextensions.cpp" />
@@ -182,6 +183,7 @@
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutReceiver.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSDK.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSender.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSenderMemory.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSenderNames.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSharedMemory.cpp" />
 	</ItemGroup>
@@ -191,6 +193,7 @@
 		<ClInclude Include="..\..\..\addons\ofxSpout2\src\ofxSpout2Sender.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\Spout.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutCommon.h" />
+		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutCopy.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutDirectX.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutGLDXinterop.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutGLextensions.h" />
@@ -198,6 +201,7 @@
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutReceiver.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSDK.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSender.h" />
+		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSenderMemory.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSenderNames.h" />
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSharedMemory.h" />
 	</ItemGroup>

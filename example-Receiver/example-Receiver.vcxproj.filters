@@ -13,11 +13,14 @@
 		<ClCompile Include="src\ofApp.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSpout2\src\ofxSpout2Receiver.cpp">
+			<Filter>addons\ofxSpout2\src</Filter>
+		</ClCompile>
 		<ClCompile Include="..\..\..\addons\ofxSpout2\src\ofxSpout2Sender.cpp">
 			<Filter>addons\ofxSpout2\src</Filter>
 		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxSpout2\src\ofxSpout2Receiver.cpp">
-			<Filter>addons\ofxSpout2\src</Filter>
+		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutCopy.cpp">
+			<Filter>addons\ofxSpout2\libs\src</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutDirectX.cpp">
 			<Filter>addons\ofxSpout2\libs\src</Filter>
@@ -38,6 +41,9 @@
 			<Filter>addons\ofxSpout2\libs\src</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSender.cpp">
+			<Filter>addons\ofxSpout2\libs\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSenderMemory.cpp">
 			<Filter>addons\ofxSpout2\libs\src</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\..\addons\ofxSpout2\libs\src\SpoutSenderNames.cpp">
@@ -89,6 +95,9 @@
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutCommon.h">
 			<Filter>addons\ofxSpout2\libs\include</Filter>
 		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutCopy.h">
+			<Filter>addons\ofxSpout2\libs\include</Filter>
+		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutDirectX.h">
 			<Filter>addons\ofxSpout2\libs\include</Filter>
 		</ClInclude>
@@ -108,6 +117,9 @@
 			<Filter>addons\ofxSpout2\libs\include</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSender.h">
+			<Filter>addons\ofxSpout2\libs\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSenderMemory.h">
 			<Filter>addons\ofxSpout2\libs\include</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxSpout2\libs\include\SpoutSenderNames.h">

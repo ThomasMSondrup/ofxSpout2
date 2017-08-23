@@ -9,7 +9,7 @@ namespace ofxSpout2 {
 		Receiver();
 
 		void setup();
-
+		void setup(string Sendername);
 		// show the panel for possible senders and select one
 		void showSenders();
 

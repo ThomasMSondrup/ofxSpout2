@@ -279,7 +279,6 @@ void Spout::ReleaseSender(DWORD dwMsec)
 // 27.07-14 - change logic to allow an optional user flag to use the active sender
 bool Spout::CreateReceiver(char* sendername, unsigned int &width, unsigned int &height, bool bActive)
 {
-
 	char UserName[256];
 	UserName[0] = 0; // OK to do this internally
 
@@ -293,7 +292,7 @@ bool Spout::CreateReceiver(char* sendername, unsigned int &width, unsigned int &
 		bUseActive = false; // set global flag to use the active sender or not
 	}
 
-	// printf("Spout::CreateReceiver(%s) %dx%d, bActive = %d\n", UserName, width, height, bActive);
+	 //printf("Spout::CreateReceiver(%s) %dx%d, bActive = %d\n", UserName, width, height, bActive);
 
 	// Make sure it has been initialized
 	// OpenReceiver	checks g_ShareHandle for NULL which indicates memoryshare sender

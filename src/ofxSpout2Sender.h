@@ -11,6 +11,7 @@ namespace ofxSpout2 {
 	public:
 		Sender();
 		void sendTexture(ofTexture& t, string senderName);
+		void sendTexture(ofTexture& t, string senderName, bool FlipOutputImage);
 		void exit();
 
 
@@ -23,6 +24,7 @@ namespace ofxSpout2 {
 		vector<int>			senderHeightList;
 		vector<ofFbo>		senderFboList;
 
+		bool FlipOutput = false;
 
 	};
 }

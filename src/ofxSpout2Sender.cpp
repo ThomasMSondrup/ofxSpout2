@@ -93,8 +93,14 @@ void Sender::sendTexture(ofTexture& t, string name)
 		ofPopStyle();
 		ofPopMatrix();
 		glBindTexture(GL_TEXTURE_2D, 0);  //
-		spoutSenderList[i]->SendTexture(senderFboList[i].getTextureReference().getTextureData().textureID, GL_TEXTURE_2D, senderWidthList[i], senderHeightList[i], false); 
+		spoutSenderList[i]->SendTexture(senderFboList[i].getTextureReference().getTextureData().textureID, GL_TEXTURE_2D, senderWidthList[i], senderHeightList[i], FlipOutput); 
 	}
+}
+
+void Sender::sendTexture(ofTexture& t, string senderName, bool FlipOutputImage)
+{
+	FlipOutput = FlipOutputImage;
+	sendTexture(t, senderName);
 }
 
 //--------------------------------------------------------------

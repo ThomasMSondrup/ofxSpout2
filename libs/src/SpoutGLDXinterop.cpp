@@ -1193,6 +1193,7 @@ bool spoutGLDXinterop::LoadGLextensions()
 	_itoa_s(m_caps, buffer, 2);
 
 	if(m_caps == 0) {
+		
 		return false;
 	}
 

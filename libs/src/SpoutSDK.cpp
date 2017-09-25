@@ -104,7 +104,6 @@
 //		15.01.17	- Add GetShareMode, SetShareMode
 //		18.01.17	- GetImageSize redundant for 2.006
 //		22.01.17	- include zero char in SelectSenderPanel NULL arg checks
-//		25.05.17	- corrected SendImage UpdateSender to use passed width and height
 //
 // ================================================================
 /*
@@ -279,6 +278,7 @@ void Spout::ReleaseSender(DWORD dwMsec)
 // 27.07-14 - change logic to allow an optional user flag to use the active sender
 bool Spout::CreateReceiver(char* sendername, unsigned int &width, unsigned int &height, bool bActive)
 {
+
 	char UserName[256];
 	UserName[0] = 0; // OK to do this internally
 
@@ -292,7 +292,7 @@ bool Spout::CreateReceiver(char* sendername, unsigned int &width, unsigned int &
 		bUseActive = false; // set global flag to use the active sender or not
 	}
 
-	 //printf("Spout::CreateReceiver(%s) %dx%d, bActive = %d\n", UserName, width, height, bActive);
+	// printf("Spout::CreateReceiver(%s) %dx%d, bActive = %d\n", UserName, width, height, bActive);
 
 	// Make sure it has been initialized
 	// OpenReceiver	checks g_ShareHandle for NULL which indicates memoryshare sender
@@ -345,7 +345,7 @@ bool Spout::SendImage(const unsigned char* pixels,
 
 	// width, g_Width should all be the same
 	if(width != g_Width || height != g_Height)
-		return(UpdateSender(g_SharedMemoryName, width, height));
+		UpdateSender(g_SharedMemoryName, g_Width, g_Height);
 
 	// Only RGBA, BGRA, RGB, BGR supported
 	if(!(glformat == GL_RGBA || glFormat == 0x80E1 || glformat == GL_RGB || glFormat == 0x80E0))
@@ -1048,13 +1048,15 @@ bool Spout::OpenReceiver (char* theName, unsigned int& theWidth, unsigned int& t
 		return false;
 	}
 
+	
 	// Texture mode - sharehandle must not be NULL
-	if(!bMemory && !sharehandle)
+	//DXGI_FORMAT_B8G8R8A8_UNORM
+	if((dwFormat!= DXGI_FORMAT_B8G8R8A8_UNORM)&&(!bMemory && !sharehandle))
 		return false;
-
+		
 	g_ShareHandle = sharehandle;
 
-	if(bDxInitOK) {
+	if(bDxInitOK|| (dwFormat == DXGI_FORMAT_B8G8R8A8_UNORM)) {
 
 		// Render window must be visible for initSharing to work
 		// Safety in case no opengl context
@@ -1513,7 +1515,7 @@ bool Spout::OpenSpout()
 	// If extensions fail to load, FBO extensions are not available and nothing
 	// will not work anyway, so quit now
 	if(!interop.LoadGLextensions())	{
-		// printf("OpenSpout : Extensions not loaded\n");
+		printf("OpenSpout : Extensions not loaded\n");
 		return false;
 	}
 

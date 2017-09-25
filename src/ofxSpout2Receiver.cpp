@@ -12,6 +12,12 @@ void Receiver::setup() {
 	mReceiver = new SpoutReceiver;
 	mbInitialized = false;
 	SenderName[0] = 0;
+	//mReceiver->SetCPUmode(false);
+	//mReceiver->SetBufferMode(false);
+	//mReceiver->SetMemoryShareMode(false);
+	//mReceiver->SetShareMode(0);
+	//mReceiver->spout.interop.UseDX9(false);
+	//mReceiver->spout.interop.OpenDirectX11();
 }
 
 void Receiver::setup(string Sendername)

@@ -639,7 +639,7 @@ bool spoutSenderNames::UpdateSender(const char *sendername, unsigned int width, 
 bool spoutSenderNames::FindSender(char *sendername, unsigned int &width, unsigned int &height, HANDLE &hSharehandle, DWORD &dwFormat)
 {
 	SharedTextureInfo info;
-	
+
 	// ---------------------------------------------------------
 	//	For a receiver check the user entered Sender name, if one, to see if it exists
 	if(sendername[0] == 0) {

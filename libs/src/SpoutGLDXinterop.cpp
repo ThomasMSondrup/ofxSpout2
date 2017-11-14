@@ -1193,7 +1193,6 @@ bool spoutGLDXinterop::LoadGLextensions()
 	_itoa_s(m_caps, buffer, 2);
 
 	if(m_caps == 0) {
-		
 		return false;
 	}
 
@@ -2378,6 +2377,8 @@ bool spoutGLDXinterop::WriteDX11texture (GLuint TextureID, GLuint TextureTarget,
 				else {
 					PrintFBOstatus(status);
 				}
+				// restore the previous fbo - default is 0
+				glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, HostFBO);
 			}
 		}
 		g_pImmediateContext->Unmap(g_pStagingTexture, 0);
